@@ -32,6 +32,9 @@ nia.cache
 nlia.cache
 nra.cache
 
+build/*
+*/build
+
 #VSCode
 .vscode
 .vscode/*
