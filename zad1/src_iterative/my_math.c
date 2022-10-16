@@ -44,7 +44,7 @@ MyMathDiophantineResult my_math_solve_diophantine_equation(int64_t a, int64_t b,
 
     result.x *= c / result.gcd;
     result.y *= c / result.gcd;
-    if (a <  0) {result.x = -result.x;}
+    if (a < 0) {result.x = -result.x;}
     if (b < 0) {result.y = -result.y;}
 
     return (MyMathDiophantineResult) {.x = result.x, .y = result.y, .gcd = result.gcd};
@@ -55,6 +55,7 @@ static inline MyMathExtendedEuclideanResult extended_euclidean(int64_t a, int64_
     int64_t old_s = 1;
     int64_t r = b;
     int64_t old_r = a;
+
     while (r != 0) {
         int64_t q = old_r / r;
         int64_t temp = r;

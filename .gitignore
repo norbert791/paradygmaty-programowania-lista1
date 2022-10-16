@@ -32,8 +32,10 @@ nia.cache
 nlia.cache
 nra.cache
 
+#build
 build/*
 */build
+.objs
 
 #VSCode
 .vscode
