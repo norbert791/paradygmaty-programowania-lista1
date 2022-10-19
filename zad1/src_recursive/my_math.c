@@ -39,7 +39,7 @@ MyMathDiophantineResult my_math_solve_diophantine_equation(int64_t a, int64_t b,
 
     result.x *= c / result.gcd;
     result.y *= c / result.gcd;
-    if (a <  0) {result.x = -result.x;}
+    if (a < 0) {result.x = -result.x;}
     if (b < 0) {result.y = -result.y;}
 
     return (MyMathDiophantineResult) {.x = result.x, .y = result.y, .gcd = result.gcd};

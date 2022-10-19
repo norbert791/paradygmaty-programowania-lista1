@@ -7,13 +7,26 @@ project(zad1
         DESCRIPTION "JPP Lista 1 zadanie 1"
 )
 
-add_executable(zad1_it app/main.c src_iterative/my_math.c)
-target_include_directories(zad1_it PUBLIC inc)
-target_compile_options(zad1_it PUBLIC -Wall -Wextra -pedantic)
-set_property(TARGET zad1_it PROPERTY C_STANDARD 99)
+if(LIBRARY)
+        add_library(zad1_it SHARED src_iterative/my_math.c inc/my_math.h)
+        target_include_directories(zad1_it PUBLIC inc)
+        target_compile_options(zad1_it PUBLIC -Wall -Wextra -pedantic -fPIC)
+        set_property(TARGET zad1_it PROPERTY C_STANDARD 99)
 
 
-add_executable(zad1_rec app/main.c src_recursive/my_math.c)
-target_include_directories(zad1_rec PUBLIC inc)
-target_compile_options(zad1_rec PUBLIC -Wall -Wextra -pedantic)
-set_property(TARGET zad1_rec PROPERTY C_STANDARD 99)
+        add_library(zad1_rec SHARED src_recursive/my_math.c inc/my_math.h)
+        target_include_directories(zad1_rec PUBLIC inc)
+        target_compile_options(zad1_rec PUBLIC -Wall -Wextra -pedantic -fPIC)
+        set_property(TARGET zad1_rec PROPERTY C_STANDARD 99)
+else()
+        add_executable(zad1_it app/main.c src_iterative/my_math.c)
+        target_include_directories(zad1_it PUBLIC inc)
+        target_compile_options(zad1_it PUBLIC -Wall -Wextra -pedantic)
+        set_property(TARGET zad1_it PROPERTY C_STANDARD 99)
+
+
+        add_executable(zad1_rec app/main.c src_recursive/my_math.c)
+        target_include_directories(zad1_rec PUBLIC inc)
+        target_compile_options(zad1_rec PUBLIC -Wall -Wextra -pedantic)
+        set_property(TARGET zad1_rec PROPERTY C_STANDARD 99)
+endif()

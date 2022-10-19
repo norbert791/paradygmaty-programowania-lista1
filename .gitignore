@@ -33,9 +33,12 @@ nlia.cache
 nra.cache
 
 #build
+myLib/*
 build/*
 */build
+*/myLib
 .objs
+*.so
 
 #VSCode
 .vscode
