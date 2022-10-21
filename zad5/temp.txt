@@ -1,0 +1,11 @@
+    Ada.Text_IO.Put_Line(Natural'Image(gcd_result));
+    if dioph_result.sol_type = my_math_ada.ANY then
+        Ada.Text_IO.Put_Line("Solution is given by any two integers");
+    elsif dioph_result.sol_type = my_math_ada.NOT_FOUND then
+        Ada.Text_IO.Put_Line("Solution does not exist");
+    else
+        Ada.Text_IO.Put_Line("x := " & Integer'Image(dioph_result.x) & " + k * " &
+                    Integer'Image(b / dioph_result.gcd) & " and y := " & 
+                    Integer'Image(dioph_result.y) & " - k * " & 
+                    Integer'Image(a / dioph_result.gcd));
+    end if;
