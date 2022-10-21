@@ -1,4 +1,3 @@
-with Interfaces.C;
 with Interfaces;
 package my_math_ada is
 
